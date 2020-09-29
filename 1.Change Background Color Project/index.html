@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task #1</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(155, 151, 151);
+        }
+
+        button {
+            color: white;
+            padding: 10px 20px;
+            border: 2px solid white;
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <button>
+        Click me to change background color
+    </button>
+    <script>
+        const button = document.querySelector('button')
+        button.addEventListener('click', () => {
+            const colors = ['red', 'green', 'blue', 'cyan']
+            const selectedColor = colors[Math.floor(Math.random() * colors.length)]
+            document.body.style.backgroundColor = selectedColor
+        })
+    </script>
+</body>
+</html>
