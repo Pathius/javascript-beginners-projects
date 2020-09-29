@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task #2</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(155, 151, 151);
+        }
+
+        div {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        h2 {
+            width: 100%;
+            color: white;
+            display: block;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        button {
+            color: white;
+            padding: 10px 20px;
+            border: 2px solid white;
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Current color is <span>default</span></h2>
+        <button>
+            Click me to change background color
+        </button>
+    </div>
+    <script>
+        const button = document.querySelector('button')
+        button.addEventListener('click', () => {
+            const chars = [1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'F']
+            let color = '#'
+            for (let i = 0; i < 6; i++) {
+                color += `${chars[Math.floor(Math.random() * chars.length)]}` 
+            }
+            document.body.style.backgroundColor = color
+            document.querySelector('span').textContent = color
+        })
+    </script>
+</body>
+</html>
